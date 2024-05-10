@@ -16,7 +16,7 @@ export default function Searchbox() {
   const [city, setCity] = useState("");
 
   return (
-    <div>
+    <div className="w-full">
       <form
         onSubmit={(e) => hadleSearch(e)}
         className="bg-white flex items-center px-2 py-1"
@@ -26,7 +26,8 @@ export default function Searchbox() {
           name="city"
           value={city}
           onChange={(e) => setCity(e.target.value)}
-          className="text-black w-[120px] md:w-[200px] focus:outline-none"
+          className="text-black w-full focus:outline-none"
+          placeholder="Enter the City"
         />
         <button className="text-black">
           <CiSearch size={23} />

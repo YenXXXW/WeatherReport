@@ -20,7 +20,7 @@ export default async function HourlyCast({ city }: { city: string }) {
   // };
   return (
     <section className="w-full">
-      <div className="w-full md:w-[80%] lg:w-[50%] mx-auto">
+      <div className="w-full md:w-[80%] lg:w-[50%] mx-auto  bg-white">
         <div className="w-full px-3 bg-whte">
           <p className="py-3  border-b-[1px] border-slate-300">
             HOURLY WEATHER

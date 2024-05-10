@@ -8,6 +8,7 @@ import { getWeatheData } from "@/lib/foreCastData";
 import TenDayForeCast from "./TenDayForeCast";
 import HourlyCast from "./HourlyCast";
 import Link from "next/link";
+import { Metadata } from "next";
 
 interface PageProps {
   params: {
@@ -15,26 +16,29 @@ interface PageProps {
   };
 }
 
+export function generateMetadata({ params: { city } }: PageProps): Metadata {
+  return {
+    title: city.replace("%20", " ") + " - WeatherWiz",
+  };
+}
+
 export const Days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
 export default async function page({ params: { city } }: PageProps) {
-  const date = new Date();
-
   const forecastData = await getWeatheData(city);
   const data = forecastData.current;
 
+  const replacedString = city.replace("%20", " ");
+
   return (
     <section className="w-full  ">
-      <ul className="w-full bg-black  text-white">
+      <ul className="w-full py-1 text-black border0al">
         <div className="flex gap-20 w-full md:w-[80%] lg:w-[50%]  mx-auto justify-between items-center">
           <div className="flex gap-3 items-center">
-            <Image src="/logo.png" alt={"logo"} width={200} height={100} />
-
-            <span className="font-semibold">{city}</span>
+            <span className="font-semibold">{replacedString}</span>
             <span>
               {data.temp_c}
-              &deg;
-              <sub>C</sub>
+              &deg; C
             </span>
             <Image
               src={"https:" + data.condition.icon}
@@ -46,7 +50,6 @@ export default async function page({ params: { city } }: PageProps) {
 
           <div className="flex items-center gap-3">
             <Searchbox />
-            <HiOutlineMenuAlt3 size={24} />
           </div>
         </div>
       </ul>

@@ -5,5 +5,5 @@
 @tailwind utilities;
 
 body {
-  @apply w-full relative font-Reddit bg-[#E4EAF2];
+  @apply w-full min-h-screen relative font-Reddit bg-[#E4EAF2];
 }
