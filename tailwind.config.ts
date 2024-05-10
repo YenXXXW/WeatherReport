@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import daisyui from "daisyui";
 
 const config: Config = {
   content: [
@@ -12,9 +13,15 @@ const config: Config = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+
+        gradient:
+          "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNmIlP5B7PgYEyEzZpBimbqhG7mCsPooTfYg&s)",
+      },
+      fontFamily: {
+        Reddit: ["Reddit Sans Condensed", "sans-serif"],
       },
     },
   },
-  plugins: [],
+  plugins: [daisyui],
 };
 export default config;
