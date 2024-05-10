@@ -12,7 +12,7 @@ export default function Navbar() {
         <Link href={"/"}>
           <li className="flex gap-3 items-center">
             <Image
-              src="/logosymbol.png"
+              src="/logoSymbol.png"
               alt={"logoSymbol"}
               width={50}
               height={50}

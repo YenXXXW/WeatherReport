@@ -27,7 +27,7 @@ export default function page() {
               alt={"logo"}
               width={100}
               height={100}
-              src="/logosymbol.png"
+              src="/logoSymbol.png"
               className="w-32 h-24 mr-4 mb-4"
             />
             <Image alt={"logo"} width={140} height={50} src="/logotext.png" />
